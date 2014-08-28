@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Deaf Grandma</h1>
+  <% if @response_text %>
+    <p>Grandma says: "<%= @response_text %>"</p>
+  <% end %>
+
+  <%= form_tag("/grandma") do %>
+    <%= label_tag(:input, "Say something to Grandma:") %>
+    <br />
+    <%= text_field_tag :input %>
+    <%= submit_tag("Say it!") %>
+  <% end %>
+</div>
