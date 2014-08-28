@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts
+
+console.log('meowmnix');
+
+// var doShit = function(event) {
+
+// };
+
+
+// $("form").on('submit', doShit);
+
+$('#grandma_response').hide().fadeIn(3000);
+

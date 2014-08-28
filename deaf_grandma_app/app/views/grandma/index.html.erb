@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Deaf Grandma</h1>
   <% if @response_text %>
-    <p>Grandma says: "<%= @response_text %>"</p>
+    <p id="grandma_response">Grandma says: "<%= @response_text %>"</p>
   <% end %>
 
   <%= form_tag("/grandma") do %>
