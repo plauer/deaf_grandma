@@ -20,11 +20,23 @@ $(document).ready( function(event, data) {
 var doShit = function(event, data) {
 
   console.log(data.grandma_response)
-  granny_response = document.createElement("p");
-  $(granny_response).addClass("granny_response");
-  $(granny_response).html('Grandma says "'+data.grandma_response+'"');
-  $('#tits').prepend(granny_response);
-  $('.granny_response').hide().fadeIn(3000);
+  if ($('#granny_response').length==0){
+    granny_response = document.createElement("p");
+    $(granny_response).attr("id","granny_response");
+    response_text = document.createElement("span");
+    $(response_text).attr("id","response_text");
+    $(response_text).html(data.grandma_response);
+    console.log(response_text);
+    console.log(granny_response);
+
+    $(granny_response).html('Grandma says "');
+    $(response_text).appendTo($(granny_response));
+    $(granny_response).append('"');
+    $('#tits').html(granny_response);
+  } else {
+    $('#response_text').html(data.grandma_response);
+  }
+  $('#granny_response').hide().fadeIn(3000);
 }
 
 

@@ -1,12 +1,12 @@
 <div class="container">
   <h1>Deaf Grandma</h1>
   <div id="tits">
-    <% if @response_text %>
+<!--     <% if @response_text %>
       <p id="granny_response">Grandma says: "<%= @response_text %>"</p>
-    <% end %>
+    <% end %> -->
   </div>
 
-  <%= form_tag("/grandma", remote: true) do %>
+  <%= form_tag(grandma_index_path, method:'post', remote: true) do %>
     <%= label_tag(:input, "Say something to Grandma:") %>
     <br />
     <%= select_tag(:city_id, options_for_select([['San Francisco',1],['San Mateo',2]]) ) %>
