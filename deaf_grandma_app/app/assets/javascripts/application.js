@@ -15,14 +15,21 @@
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts
 
-console.log('meowmnix');
+$(document).ready( function(event, data) {
 
-// var doShit = function(event) {
+var doShit = function(event, data) {
 
-// };
+  console.log(data.grandma_response)
+  granny_response = document.createElement("p");
+  $(granny_response).addClass("granny_response");
+  $(granny_response).html('Grandma says "'+data.grandma_response+'"');
+  $('#tits').prepend(granny_response);
+  $('.granny_response').hide().fadeIn(3000);
+}
 
 
-// $("form").on('submit', doShit);
+  $('body').on('ajax:success', doShit)
 
-$('#grandma_response').hide().fadeIn(3000);
 
+
+})

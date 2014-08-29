@@ -4,14 +4,18 @@ class GrandmaController < ApplicationController
   end
 
   def create
-    granny = GrandmaResponse.new(params[:input])
-    redirect_to root_with_response_path(granny.response)
+    respond_to do |format|
+        format.json { render json: {:grandma_response => GrandmaResponse.new(params[:input]).response} }
+    end
+
+    # redirect_to root_with_response_path(GrandmaResponse.new(params[:input]).response)
   end
 
   def index_with_response
     @response_text = params[:input]
     render :index
   end
+
 
 
 

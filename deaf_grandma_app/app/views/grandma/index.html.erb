@@ -1,12 +1,15 @@
 <div class="container">
   <h1>Deaf Grandma</h1>
-  <% if @response_text %>
-    <p id="grandma_response">Grandma says: "<%= @response_text %>"</p>
-  <% end %>
+  <div id="tits">
+    <% if @response_text %>
+      <p id="granny_response">Grandma says: "<%= @response_text %>"</p>
+    <% end %>
+  </div>
 
-  <%= form_tag("/grandma") do %>
+  <%= form_tag("/grandma", remote: true) do %>
     <%= label_tag(:input, "Say something to Grandma:") %>
     <br />
+    <%= select_tag(:city_id, options_for_select([['San Francisco',1],['San Mateo',2]]) ) %>
     <%= text_field_tag :input %>
     <%= submit_tag("Say it!") %>
   <% end %>
